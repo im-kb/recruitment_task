@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Person",
+  "description": "A person based on person from SWAPI",
+  "type": "object",
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "description": "Name of the person",
+      "type": "string"
+    },
+    "height": {
+      "type": "string",
+      "minimum": 0
+    },
+    "mass": {
+      "type": "string",
+      "minimum": 0
+    }
+  }
+}

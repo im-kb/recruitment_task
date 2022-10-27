@@ -1,4 +1,4 @@
-package com.miquido.recruitment_task;
+package com.company.recruitment_task;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
