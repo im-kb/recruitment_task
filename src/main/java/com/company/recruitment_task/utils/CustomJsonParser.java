@@ -38,7 +38,7 @@ public class CustomJsonParser {
             }
             return mapper.readValue(json, PersonDto.class);
         } catch (JsonProcessingException e) {
-            LOGGER.error("Error while parsing json to object");
+            LOGGER.error("Error while parsing json to object: {}", e);
             return null;
         }
     }

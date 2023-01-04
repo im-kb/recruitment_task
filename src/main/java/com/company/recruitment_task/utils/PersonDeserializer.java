@@ -33,25 +33,25 @@ public class PersonDeserializer extends StdDeserializer<PersonDto> {
         Integer mass = 0;
 
         try {
-            externalId = node.get("externalId") != null ? Long.valueOf(node.get("externalId").asText()) : null;
+            externalId = node.get("externalId") != null ? node.get("externalId").asLong() : null;
         } catch (NumberFormatException nfe) {
             LOGGER.warn("Cannot deserialize field externalId with error: {}", nfe);
         }
 
         try {
-            id = node.get("id") != null ? Long.valueOf(node.get("id").asText()) : null;
+            id = node.get("id") != null ? node.get("id").asLong() : null;
         } catch (NumberFormatException nfe) {
             LOGGER.warn("Cannot deserialize field id with error: {}", nfe);
         }
 
         try {
-            height = node.get("height") != null ? Integer.valueOf(node.get("height").asText()) : null;
+            height = node.get("height") != null ? node.get("height").asInt() : null;
         } catch (NumberFormatException nfe) {
             LOGGER.warn("Cannot deserialize field height with error: {}", nfe);
         }
 
         try {
-            mass = node.get("mass") != null ? Integer.valueOf(node.get("mass").asText()) : null;
+            mass = node.get("mass") != null ? Integer.valueOf(node.get("mass").asText()) : 0;
         } catch (NumberFormatException nfe) {
             LOGGER.warn("Cannot deserialize field mass with error: {}", nfe.getMessage());
         }

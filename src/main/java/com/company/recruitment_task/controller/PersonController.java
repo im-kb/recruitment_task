@@ -24,14 +24,15 @@ public class PersonController {
     }
 
     @Operation(summary = "Fetch a person from external service and store it in database")
-    @GetMapping(value="/external-import/{personId}")
+    @GetMapping(value = "/external-import/{personId}")
     public ResponseEntity<PersonDto> importPersonById(@NonNull @PathVariable("personId") Long personId) {
         var result = personService.importPerson(personId);
         return result != null ? ResponseEntity.ok(result) : ResponseEntity.internalServerError().build();
     }
 
     @Operation(summary = "Get a person by id from internal database")
-    @GetMapping(value="/{personId}")
+    @GetMapping(value = "/{personId}")
+    @ResponseBody
     public ResponseEntity<PersonDto> getPersonById(@NonNull @PathVariable("personId") Long personId) {
         var result = personService.getPersonFromDatabase(personId);
         return result != null ? ResponseEntity.ok(result) : ResponseEntity.notFound().build();

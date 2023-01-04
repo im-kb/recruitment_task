@@ -24,5 +24,6 @@ public class PersonDto {
     private String name;
     private Integer height;
     private Integer mass;
+    private Boolean isTrue;
 
 }

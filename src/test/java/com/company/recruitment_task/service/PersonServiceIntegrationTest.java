@@ -32,16 +32,12 @@ class PersonServiceIntegrationTest {
     @LocalServerPort
     private int port;
 
-    private static RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
     private final String URL = "http://localhost";
 
     @Autowired
     private IPersonRepository personRepository;
-
-    @BeforeAll
-    public static void init() {
-        restTemplate = new RestTemplate();
-    }
 
     @Test
     @Transactional
